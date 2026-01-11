@@ -1,16 +1,16 @@
 backend:
   name: github
-  repo: Shakalinux/fiel-informatica-catalogo  # Mude para o seu repo GitHub
+  repo: Shakalinux/fiel-informatica-catalogo 
   branch: main
 
-media_folder: "images"      # Pasta onde vão as fotos (crie ela na raiz)
+media_folder: "images"      
 public_folder: "/images"
 
 collections:
   - name: "produtos"
     label: "Produtos"
-    folder: "data/produtos"   # Crie pasta data/produtos/
-    create: true              # Permite adicionar novos
+    folder: "data/produtos" 
+    create: true              
     slug: "{{slug}}"
     fields:
       - {label: "Nome", name: "nome", widget: "string", required: true}
