@@ -1,30 +1,36 @@
 backend:
-  name: github
-  repo: Shakalinux/fiel-informatica-catalogo 
+  name: git-gateway
   branch: main
 
-media_folder: "images"      
+
+media_folder: "images"
 public_folder: "/images"
 
 collections:
   - name: "produtos"
     label: "Produtos"
-    folder: "data/produtos" 
-    create: true              
+    folder: "data/produtos"
+    create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Nome", name: "nome", widget: "string", required: true}
-      - {label: "Preço", name: "preco", widget: "string", required: true}
-      - {label: "Descrição", name: "descricao", widget: "text"}
-      - {label: "Imagem", name: "imagem", widget: "image", required: true}
-      - {label: "Categoria", name: "categoria", widget: "select", options: ["Notebooks", "Acessórios", "Componentes", "Periféricos"]}
+      - { label: "Nome", name: "nome", widget: "string", required: true }
+      - { label: "Preço", name: "preco", widget: "string", required: true }
+      - { label: "Descrição", name: "descricao", widget: "text" }
+      - { label: "Imagem", name: "imagem", widget: "image", required: true }
+      - {
+          label: "Categoria",
+          name: "categoria",
+          widget: "select",
+          options: ["Notebooks", "Acessórios", "Componentes", "Periféricos"]
+        }
 
   - name: "servicos"
     label: "Serviços"
     folder: "data/servicos"
     create: true
+    slug: "{{slug}}"
     fields:
-      - {label: "Nome do Serviço", name: "nome", widget: "string", required: true}
-      - {label: "Preço (a partir de)", name: "preco", widget: "string", required: true}
-      - {label: "Descrição", name: "descricao", widget: "markdown"}
-      - {label: "Imagem", name: "imagem", widget: "image"}
+      - { label: "Nome do Serviço", name: "nome", widget: "string", required: true }
+      - { label: "Preço (a partir de)", name: "preco", widget: "string", required: true }
+      - { label: "Descrição", name: "descricao", widget: "markdown" }
+      - { label: "Imagem", name: "imagem", widget: "image" }
