@@ -1,7 +1,7 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Shakalinux/fiel-informatica-catalogo
   branch: main
-
 
 media_folder: "images"
 public_folder: "/images"
@@ -13,24 +13,18 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Nome", name: "nome", widget: "string", required: true }
-      - { label: "Preço", name: "preco", widget: "string", required: true }
+      - { label: "Nome", name: "nome", widget: "string" }
+      - { label: "Preço", name: "preco", widget: "string" }
       - { label: "Descrição", name: "descricao", widget: "text" }
-      - { label: "Imagem", name: "imagem", widget: "image", required: true }
-      - {
-          label: "Categoria",
-          name: "categoria",
-          widget: "select",
-          options: ["Notebooks", "Acessórios", "Componentes", "Periféricos"]
-        }
+      - { label: "Imagem", name: "imagem", widget: "image" }
+      - { label: "Categoria", name: "categoria", widget: "select", options: ["Notebooks", "Acessórios", "Componentes", "Periféricos"] }
 
   - name: "servicos"
     label: "Serviços"
     folder: "data/servicos"
     create: true
-    slug: "{{slug}}"
     fields:
-      - { label: "Nome do Serviço", name: "nome", widget: "string", required: true }
-      - { label: "Preço (a partir de)", name: "preco", widget: "string", required: true }
+      - { label: "Nome do Serviço", name: "nome", widget: "string" }
+      - { label: "Preço", name: "preco", widget: "string" }
       - { label: "Descrição", name: "descricao", widget: "markdown" }
       - { label: "Imagem", name: "imagem", widget: "image" }
