@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fiel Informática - Catálogo Online</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <!-- Ícones Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    body {
+      background-color: #f0f4f8;
+      font-family: system-ui, -apple-system, sans-serif;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+    .navbar {
+      background: linear-gradient(135deg, #0d6efd, #6610f2);
+    }
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25D366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .whatsapp-float:hover {
+      background-color: #128C7E;
+      transform: scale(1.15) rotate(5deg);
+    }
+    .card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2) !important;
+    }
+    .btn-whatsapp {
+      background-color: #25D366;
+      border-color: #25D366;
+      transition: background-color 0.3s;
+    }
+    .btn-whatsapp:hover {
+      background-color: #128C7E;
+      border-color: #128C7E;
+    }
+    .search-input {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .card-img-top {
+      height: 280px;
+      object-fit: cover;
+    }
+    .section-header {
+      background: linear-gradient(135deg, #0d6efd, #6610f2);
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Fiel Informática</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#produtos">Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header com Carousel de Destaques -->
+  <section id="home" class="section-header">
+    <div class="container">
+      <div id="carouselDestaques" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://cdn.mos.cms.futurecdn.net/J4pSfeTSNUJyJMsL7SiBbH.jpg" class="d-block w-100 rounded" alt="Promo Notebook" style="max-height: 400px; object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Notebook Dell em Promoção!</h3>
+              <p>Alta performance por apenas R$ 3.499,00</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://media.istockphoto.com/id/928791064/photo/technician-repairing-laptop-computer-closeup.jpg" class="d-block w-100 rounded" alt="Manutenção" style="max-height: 400px; object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Manutenção Rápida e Confiável</h3>
+              <p>Diagnóstico grátis a partir de R$ 120,00</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.ytimg.com/vi/es0rdgEXcbg/hq720.jpg" class="d-block w-100 rounded" alt="Montagem PC" style="max-height: 400px; object-fit: cover;">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Montagem de PC Gamer</h3>
+              <p>Personalizado a partir de R$ 250,00</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestaques" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDestaques" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Busca Dinâmica -->
+  <section class="py-4 bg-white">
+    <div class="container text-center">
+      <div class="input-group search-input">
+        <span class="input-group-text"><i class="bi bi-search"></i></span>
+        <input type="text" id="searchInput" class="form-control" placeholder="Busque produtos ou serviços (ex.: notebook, manutenção)">
+      </div>
+    </div>
+  </section>
+
+  <!-- Produtos -->
+  <section id="produtos" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold">Nossos Produtos</h2>
+      <div class="row g-4" id="produtos-container"></div>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section id="servicos" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold">Nossos Serviços</h2>
+      <div class="row g-4" id="servicos-container"></div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="py-5 bg-white">
+    <div class="container text-center">
+      <h2 class="mb-4 fw-bold">Entre em Contato</h2>
+      <p>Estamos em Brasília - DF. Ligue ou mande mensagem!</p>
+      <a href="https://api.whatsapp.com/send/?phone=5561995599172&text=Olá!%20Vi%20o%20catálogo%20da%20Fiel%20Informática%20e%20gostaria%20de%20falar%20sobre..." 
+         class="btn btn-lg btn-whatsapp" target="_blank">
+        Falar no WhatsApp <i class="bi bi-whatsapp"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="bg-dark text-white text-center py-4">
+    <p>© 2026 Fiel Informática - Todos os direitos reservados</p>
+    <p>Contato: (61) 99559-9172 | Brasília - DF</p>
+  </footer>
+
+  <!-- Botão flutuante WhatsApp -->
+  <a href="https://api.whatsapp.com/send/?phone=5561995599172&text=Olá!%20Vi%20o%20catálogo%20da%20Fiel%20Informática%20e%20gostaria%20de%20falar%20sobre..." 
+     class="whatsapp-float" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JavaScript - Dados e Dinâmicas -->
+  <script>
+    // Dados dos produtos (imagens atualizadas e mais precisas)
+    const produtos = [
+      {
+        nome: "Notebook Dell Inspiron 15",
+        preco: "R$ 3.499,00",
+        descricao: "Processador i5 13ª gen, 16GB RAM, SSD 512GB, tela FHD 15.6\", Windows 11 - Ideal para trabalho e estudos.",
+        imagem: "https://cdn.mos.cms.futurecdn.net/J4pSfeTSNUJyJMsL7SiBbH.jpg"
+      },
+      {
+        nome: "Mouse Gamer RGB",
+        preco: "R$ 89,90",
+        descricao: "7 botões programáveis, até 16000 DPI, iluminação RGB personalizável, ergonômico para jogos longos.",
+        imagem: "https://m.media-amazon.com/images/I/61pDShoLXqL._AC_UF894,1000_QL80_.jpg"
+      },
+      {
+        nome: "SSD 1TB NVMe Samsung 990 PRO",
+        preco: "R$ 399,00",
+        descricao: "Velocidade de leitura 7450MB/s, escrita 6900MB/s, PCIe 4.0, 5 anos de garantia - Acelere seu PC.",
+        imagem: "https://img.global.news.samsung.com/global/wp-content/uploads/2022/08/SamsungSSD990PRO_main1.jpg"
+      },
+      {
+        nome: "Headset Gamer 7.1 Fifine H6",
+        preco: "R$ 249,00",
+        descricao: "Áudio surround 7.1, microfone removível, drivers 50mm, RGB, USB - Imersão total em jogos.",
+        imagem: "https://m.media-amazon.com/images/I/91l0lqZ20QL.jpg"
+      },
+      {
+        nome: "Monitor LED 24\" Full HD",
+        preco: "R$ 599,00",
+        descricao: "Painel IPS, 75Hz, HDMI/VGA, bordas finas - Perfeito para home office ou gaming casual.",
+        imagem: "https://i.pcmag.com/imagery/reviews/07MJxyIIOwhxmBjbVGa12tA-14.fit_lim.size_1050x.jpg"
+      },
+      {
+        nome: "Placa de Vídeo RTX 3060",
+        preco: "R$ 1.999,00",
+        descricao: "12GB GDDR6, ray tracing, DLSS, 3 fans - Alta performance para games e edição de vídeo.",
+        imagem: "https://m.media-amazon.com/images/I/81nsIeRAJlL.jpg"
+      },
+      {
+        nome: "Teclado Mecânico RGB",
+        preco: "R$ 199,00",
+        descricao: "Switches Red, iluminação RGB, anti-ghosting, ideal para gamers e produtividade.",
+        imagem: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500"
+      }
+    ];
+
+    // Dados dos serviços (imagens atualizadas e mais itens)
+    const servicos = [
+      {
+        nome: "Manutenção de Notebook/PC",
+        preco: "A partir de R$ 120,00",
+        descricao: "Diagnóstico gratuito, limpeza interna, troca de peças e otimização de performance.",
+        imagem: "https://media.istockphoto.com/id/928791064/photo/technician-repairing-laptop-computer-closeup.jpg"
+      },
+      {
+        nome: "Formatação + Instalação Windows",
+        preco: "R$ 100,00",
+        descricao: "Instalação limpa do Windows 11/10, drivers atualizados e programas essenciais.",
+        imagem: "https://c8.alamy.com/comp/R21NRB/montreal-canada-november-8-2018-windows-operating-system-installation-process-on-a-laptop-screen-microsoft-is-an-american-multinational-technolo-R21NRB.jpg"
+      },
+      {
+        nome: "Suporte Remoto",
+        preco: "R$ 80,00/hora",
+        descricao: "Resolução de problemas via software remoto (AnyDesk/TeamViewer), sem sair de casa.",
+        imagem: "https://cdn.awsli.com.br/800x800/43/43035/produto/38719253/865fc1077f.jpg"
+      },
+      {
+        nome: "Montagem de Computador Gamer",
+        preco: "A partir de R$ 250,00",
+        descricao: "Projeto personalizado, montagem profissional, testes de estabilidade e overclock.",
+        imagem: "https://i.ytimg.com/vi/es0rdgEXcbg/hq720.jpg"
+      },
+      {
+        nome: "Recuperação de Dados",
+        preco: "A partir de R$ 200,00",
+        descricao: "Recuperação de arquivos perdidos em HD/SSD, backups e proteção contra falhas.",
+        imagem: "https://media.istockphoto.com/id/1361757950/photo/maintenance-pc-maintenance-repair-engineer-support-computer-technician-service-with-laptop-on.jpg"
+      },
+      {
+        nome: "Instalação de Redes e Wi-Fi",
+        preco: "R$ 150,00",
+        descricao: "Configuração de roteadores, otimização de sinal e segurança de rede doméstica/empresarial.",
+        imagem: "https://images.unsplash.com/photo-1558494949-ef0d38cb0813?w=500"
+      },
+      {
+        nome: "Upgrade de Hardware",
+        preco: "A partir de R$ 180,00",
+        descricao: "Troca de RAM, SSD, placa de vídeo e outros componentes com teste completo.",
+        imagem: "https://www.shutterstock.com/image-photo/technician-hold-screwdriver-repairing-laptop-260nw-2319214419.jpg"
+      }
+    ];
+
+    // Função para criar cards de produto
+    function criarCardProduto(item) {
+      return `
+        <div class="col-md-6 col-lg-4 produto-item">
+          <div class="card h-100">
+            <img src="${item.imagem}" class="card-img-top" alt="${item.nome}">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">${item.nome}</h5>
+              <p class="card-text flex-grow-1">${item.descricao}</p>
+              <p class="fs-4 fw-bold text-success mb-3">${item.preco}</p>
+              <a href="https://api.whatsapp.com/send/?phone=5561995599172&text=Olá!%20Estou%20interessado%20no%20${encodeURIComponent(item.nome)}%20por%20${encodeURIComponent(item.preco)}.%20Pode%20me%20ajudar?" 
+                 class="btn btn-whatsapp w-100 mt-auto" target="_blank">
+                Comprar no WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    // Função para criar cards de serviço
+    function criarCardServico(item) {
+      return `
+        <div class="col-md-6 col-lg-4 servico-item">
+          <div class="card h-100">
+            <img src="${item.imagem}" class="card-img-top" alt="${item.nome}">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">${item.nome}</h5>
+              <p class="card-text flex-grow-1">${item.descricao}</p>
+              <p class="fs-4 fw-bold text-primary mb-3">${item.preco}</p>
+              <a href="https://api.whatsapp.com/send/?phone=5561995599172&text=Olá!%20Quero%20agendar%20${encodeURIComponent(item.nome)}%20por%20${encodeURIComponent(item.preco)}.%20Pode%20me%20ajudar?" 
+                 class="btn btn-outline-primary w-100 mt-auto" target="_blank">
+                Agendar no WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    // Renderizar itens iniciais
+    const produtosContainer = document.getElementById("produtos-container");
+    produtosContainer.innerHTML = produtos.map(criarCardProduto).join('');
+    const servicosContainer = document.getElementById("servicos-container");
+    servicosContainer.innerHTML = servicos.map(criarCardServico).join('');
+
+    // Busca dinâmica
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', function() {
+      const filter = this.value.toLowerCase();
+      document.querySelectorAll('.produto-item, .servico-item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(filter) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>

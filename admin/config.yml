@@ -1,0 +1,30 @@
+backend:
+  name: github
+  repo: Shakalinux/fiel-informatica-catalogo  # Mude para o seu repo GitHub
+  branch: main
+
+media_folder: "images"      # Pasta onde vão as fotos (crie ela na raiz)
+public_folder: "/images"
+
+collections:
+  - name: "produtos"
+    label: "Produtos"
+    folder: "data/produtos"   # Crie pasta data/produtos/
+    create: true              # Permite adicionar novos
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nome", name: "nome", widget: "string", required: true}
+      - {label: "Preço", name: "preco", widget: "string", required: true}
+      - {label: "Descrição", name: "descricao", widget: "text"}
+      - {label: "Imagem", name: "imagem", widget: "image", required: true}
+      - {label: "Categoria", name: "categoria", widget: "select", options: ["Notebooks", "Acessórios", "Componentes", "Periféricos"]}
+
+  - name: "servicos"
+    label: "Serviços"
+    folder: "data/servicos"
+    create: true
+    fields:
+      - {label: "Nome do Serviço", name: "nome", widget: "string", required: true}
+      - {label: "Preço (a partir de)", name: "preco", widget: "string", required: true}
+      - {label: "Descrição", name: "descricao", widget: "markdown"}
+      - {label: "Imagem", name: "imagem", widget: "image"}
